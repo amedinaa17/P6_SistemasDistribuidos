@@ -1,0 +1,5 @@
+com\example\rest\ProductoResource.class
+com\mycompany\p6servicioweb\resources\JavaEE8Resource.class
+com\example\rest\ApplicationConfig.class
+com\mycompany\p6servicioweb\JAXRSConfiguration.class
+com\example\rest\Producto.class
