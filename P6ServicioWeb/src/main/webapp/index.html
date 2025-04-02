@@ -11,13 +11,13 @@
     <title>P6 Servicio Web</title>
     <script>
         // URL del servicio REST
-        const apiUrl = "http://localhost:8080/P6ServicioWeb/api/productos";
+        const url = "http://localhost:8080/P6ServicioWeb/restful/productos";
 
         let productoAEliminarId = null;
 
         // Función para obtener todos los productos (GET)
         function getProductos() {
-            fetch(apiUrl)
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('productos-container');
@@ -47,7 +47,7 @@
 
         // Función para eliminar un producto por ID (DELETE)
         function deleteProducto() {
-            fetch(`${apiUrl}/${productoAEliminarId}`, {
+            fetch(`${url}/${productoAEliminarId}`, {
                 method: 'DELETE'
             })
                 .then(response => response.json())
@@ -78,7 +78,7 @@
                 return;
             }
 
-            fetch(apiUrl, {
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -124,7 +124,7 @@
             const descripcion = document.getElementById("editar-descripcion").value;
             const precio = document.getElementById("editar-precio").value;
 
-            fetch(`${apiUrl}/${id}`, {
+            fetch(`${url}/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
